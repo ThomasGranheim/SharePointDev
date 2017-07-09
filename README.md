@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ## mega-menu-sample
 
 This is where you include your WebPart documentation.
@@ -26,3 +27,7 @@ gulp test - TODO
 gulp serve - TODO
 gulp bundle - TODO
 gulp package-solution - TODO
+=======
+# SharePointDev
+Testing out SPFx Framework and SPFx-extensions
+>>>>>>> 5b525a9543f38911e4a91058377062f128178487
