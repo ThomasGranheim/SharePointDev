@@ -1,5 +1,6 @@
 import { Log } from '@microsoft/sp-core-library';
 import { override } from '@microsoft/decorators';
+import { SPComponentLoader } from '@microsoft/sp-loader';
 import * as React from 'react';
 import * as pnp from "sp-pnp-js";
 
@@ -16,8 +17,11 @@ export interface IMegaMenuProps {
 }
 
 export interface IMegaMenuState {
-    taxonomy: Array<any>;
-    isLoading: boolean;
+    taxonomy?: Array<any>;
+    isLoading?: boolean;
+    isHidden?: boolean;
+    loadingScripts?: boolean;
+    errors?: Array<any>;
 }
 
 
@@ -29,7 +33,8 @@ export default class MegaMenu extends React.Component<IMegaMenuProps, IMegaMenuS
         let taxonomy = Array<ITaxonomyItem>();
         this.state = {
             taxonomy: taxonomy,
-            isLoading: true
+            isLoading: true,
+            isHidden: true
         };
     }
     @override
@@ -70,5 +75,42 @@ export default class MegaMenu extends React.Component<IMegaMenuProps, IMegaMenuS
             }).then((response: { value: Array<ITaxonomyItem> }) => {
                 this.setState({ taxonomy: response.value, isLoading: false });
             });
+    }
+
+    private _loadSPJSOMScripts() {
+        const siteColUrl = this.props.siteUrl;
+        try {
+            SPComponentLoader.loadScript(siteColUrl + '/_layouts/15/init.js', {
+                globalExportsName: '$_global_init'
+            })
+                .then((): Promise<{}> => {
+                    return SPComponentLoader.loadScript(siteColUrl + '/_layouts/15/MicrosoftAjax.js', {
+                        globalExportsName: 'Sys'
+                    });
+                })
+                .then((): Promise<{}> => {
+                    return SPComponentLoader.loadScript(siteColUrl + '/_layouts/15/SP.Runtime.js', {
+                        globalExportsName: 'SP'
+                    });
+                })
+                .then((): Promise<{}> => {
+                    return SPComponentLoader.loadScript(siteColUrl + '/_layouts/15/SP.js', {
+                        globalExportsName: 'SP'
+                    });
+                })
+                .then((): Promise<{}> => {
+                    return SPComponentLoader.loadScript(siteColUrl + '/_layouts/15/SP.taxonomy.js', {
+                        globalExportsName: 'SP'
+                    });
+                })
+                .then((): void => {
+                    this.setState({ loadingScripts: false });
+                })
+                .catch((reason: any) => {
+                    this.setState({ loadingScripts: false, errors: [...this.state.errors, reason] });
+                });
+        } catch (error) {
+            this.setState({ loadingScripts: false, errors: [...this.state.errors, error] });
+        }
     }
 }

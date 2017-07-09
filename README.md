@@ -1,6 +1,6 @@
 ## mega-menu-sample
 
-Testing out SPFx Framework and SPFx-extensions. 
+Testing out SPFx and SPFx-extensions. 
 
 ### Building the code
 
