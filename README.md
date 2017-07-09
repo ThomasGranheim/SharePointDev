@@ -1,2 +1,2 @@
 # SharePointDev
-Testing out SharePoint Framework and extentions
+Testing out SPFx Framework and SPFx-extensions
