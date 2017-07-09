@@ -1,0 +1,10 @@
+{
+  "solution": {
+    "name": "mega-menu-sample-client-side-solution",
+    "id": "8a37c373-b602-48c7-8aa5-53225dac856b",
+    "version": "1.0.0.0"
+  },
+  "paths": {
+    "zippedPackage": "solution/mega-menu-sample.sppkg"
+  }
+}
