@@ -24,3 +24,7 @@ gulp test - TODO
 gulp serve - TODO
 gulp bundle - TODO
 gulp package-solution - TODO
+
+### Test options
+
+?loadSPFX=true&debugManifestsFile=https://localhost:4321/temp/manifests.js&customActions={"aa8622ad-1815-4a49-a276-ee8991d1ca64":{"location":"ClientSideExtension.ApplicationCustomizer","properties":{"Header":"Header%20area%20of%20the%20page","Footer":"Footer%20area%20in%20the%20page"}}}
