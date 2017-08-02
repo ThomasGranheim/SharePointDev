@@ -1,38 +1,36 @@
 import { Log } from '@microsoft/sp-core-library';
 import { override } from '@microsoft/decorators';
-import { SPComponentLoader } from '@microsoft/sp-loader';
 import * as React from 'react';
-import * as pnp from "sp-pnp-js";
-
-import { ITaxonomyItem } from './ITaxonomyItem';
+//import * as pnp from "sp-pnp-js";
 import { Spinner, SpinnerType } from "office-ui-fabric-react/lib/Spinner";
 import styles from './MegaMenu.module.scss';
+import { IMegaMenuLinkItem } from './IMegaMenuLinkItem';
+import { MegaMenuData } from './MegaMenyData';
 
 import { SPHttpClient, SPHttpClientResponse } from '@microsoft/sp-http';
 
 export interface IMegaMenuProps {
     listName: string;
     siteUrl: string;
-    spHttpClient: SPHttpClient
+    spHttpClient: SPHttpClient;
 }
 
 export interface IMegaMenuState {
-    taxonomy?: Array<any>;
+    items?: Array<any>;
     isLoading?: boolean;
     isHidden?: boolean;
     loadingScripts?: boolean;
     errors?: Array<any>;
 }
 
-
 const LOG_SOURCE: string = 'MegaMenu';
 
 export default class MegaMenu extends React.Component<IMegaMenuProps, IMegaMenuState> {
     constructor(props: IMegaMenuProps, state: IMegaMenuState) {
         super(props);
-        let taxonomy = Array<ITaxonomyItem>();
+        let items = Array<IMegaMenuLinkItem>();
         this.state = {
-            taxonomy: taxonomy,
+            items: [],
             isLoading: true,
             isHidden: true
         };
@@ -50,17 +48,18 @@ export default class MegaMenu extends React.Component<IMegaMenuProps, IMegaMenuS
 
     @override
     public render(): React.ReactElement<{}> {
-        let { isLoading, taxonomy } = this.state;
+        let { isLoading, items } = this.state;
         let { listName, siteUrl, spHttpClient } = this.props;
-        let sourceCardElements = taxonomy.map((source, i) => {
-            return (<div>{source.Title}</div>);
-        });
+        let mmElements = items.map((elem, i) => {
+            return (<div>{elem.Title}</div>);
+        }); 
+
         if (isLoading) {
             return <Spinner type={SpinnerType.large} />;
         } else {
             return (
-                <div>
-                    {sourceCardElements}
+                <div style={styles}>
+                    {mmElements}
                 </div>
             );
         }
@@ -69,48 +68,15 @@ export default class MegaMenu extends React.Component<IMegaMenuProps, IMegaMenuS
         this.getListData();
     }
     private getListData(): void {
-        this.props.spHttpClient.get(`${this.props.siteUrl}/_api/web/lists/getByTitle('Source')/items`, SPHttpClient.configurations.v1)
-            .then((response: SPHttpClientResponse): Promise<{ value: Array<ITaxonomyItem> }> => {
-                return response.json();
-            }).then((response: { value: Array<ITaxonomyItem> }) => {
-                this.setState({ taxonomy: response.value, isLoading: false });
-            });
-    }
-
-    private _loadSPJSOMScripts() {
-        const siteColUrl = this.props.siteUrl;
-        try {
-            SPComponentLoader.loadScript(siteColUrl + '/_layouts/15/init.js', {
-                globalExportsName: '$_global_init'
-            })
-                .then((): Promise<{}> => {
-                    return SPComponentLoader.loadScript(siteColUrl + '/_layouts/15/MicrosoftAjax.js', {
-                        globalExportsName: 'Sys'
-                    });
-                })
-                .then((): Promise<{}> => {
-                    return SPComponentLoader.loadScript(siteColUrl + '/_layouts/15/SP.Runtime.js', {
-                        globalExportsName: 'SP'
-                    });
-                })
-                .then((): Promise<{}> => {
-                    return SPComponentLoader.loadScript(siteColUrl + '/_layouts/15/SP.js', {
-                        globalExportsName: 'SP'
-                    });
-                })
-                .then((): Promise<{}> => {
-                    return SPComponentLoader.loadScript(siteColUrl + '/_layouts/15/SP.taxonomy.js', {
-                        globalExportsName: 'SP'
-                    });
-                })
-                .then((): void => {
-                    this.setState({ loadingScripts: false });
-                })
-                .catch((reason: any) => {
-                    this.setState({ loadingScripts: false, errors: [...this.state.errors, reason] });
-                });
-        } catch (error) {
-            this.setState({ loadingScripts: false, errors: [...this.state.errors, error] });
-        }
+        // this.props.spHttpClient.get(`${this.props.siteUrl}/_api/web/lists/getByTitle('Source')/items`, SPHttpClient.configurations.v1)
+        //     .then((response: SPHttpClientResponse): Promise<{ value: Array<IMegaMenuLinkItem> }> => {
+        //         return response.json();
+        //     }).then((response: { value: Array<IMegaMenuLinkItem> }) => { 
+        //         this.setState({ taxonomy: response.value, isLoading: false });
+        //     }); 
+        this.setState({
+            items: MegaMenuData,
+            isLoading: false
+        })
     }
 }
