@@ -2,7 +2,20 @@
   "solution": {
     "name": "mega-menu-sample-client-side-solution",
     "id": "8a37c373-b602-48c7-8aa5-53225dac856b",
-    "version": "1.0.0.0"
+    "version": "1.0.0.0",
+    "features": [
+      {
+        "title": "Mega Menu - Deployment of custom action.",
+        "description": "Deploys a custom action with ClientSideComponentId association",
+        "id": "aa8622ad-1815-4a49-a276-ee8991d1ca64",
+        "version": "1.0.0.0",
+        "assets": {
+          "elementManifests": [
+            "elements.xml"
+          ]
+        }
+      }
+    ]
   },
   "paths": {
     "zippedPackage": "solution/mega-menu-sample.sppkg"

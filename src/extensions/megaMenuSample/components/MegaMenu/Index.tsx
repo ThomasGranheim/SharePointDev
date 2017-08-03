@@ -60,8 +60,8 @@ export default class MegaMenu extends React.Component<IMegaMenuProps, IMegaMenuS
         let mmElements = items.map((section) => {
             let headerLinks = section.HeaderLinks.map((hederLink) => {
                 let links = hederLink.Links.map((link) => {
-                    return <div className={styles.link}><a href={link.Url}>{link.Description}</a></div>
-                })
+                    return <div className={styles.link}><a href={link.Url}>{link.Description}</a></div>;
+                });
                 return (
                     <div className={styles.headerLink}>
                         <a className={styles.headerLinkLabel} href={hederLink.Url}>{hederLink.Description}</a>
@@ -87,8 +87,8 @@ export default class MegaMenu extends React.Component<IMegaMenuProps, IMegaMenuS
                     <div onClick={this.toggleMegaMenu} className={styles.toogleButton}>
                         <CommandButton
                             iconProps={(isVisible) ? { iconName: 'ChevronUp' } : { iconName: 'ChevronDown' }}
-                            title='ChevronDown'
-                            ariaLabel='ChevronDown'>
+                            title='ToggleButton'
+                            ariaLabel='ToggleButton'>
                             Navigate
                         </CommandButton>
                     </div>
@@ -109,7 +109,7 @@ export default class MegaMenu extends React.Component<IMegaMenuProps, IMegaMenuS
         this.setState({
             items: MMData,
             isLoading: false
-        })
+        });
     }
     /**
      * Toggles the mega menu
