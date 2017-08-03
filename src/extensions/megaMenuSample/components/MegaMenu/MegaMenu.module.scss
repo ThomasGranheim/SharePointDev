@@ -1,9 +1,13 @@
 .Megamenu {
+    background-color: #0078d7;
+    color: white;
     .cell {
-        background-color: '#e5e5e5';
         display: 'inline-block';
     }
     .container {
         width: 120;
+    }
+    .toogleButton {
+        text-align: center;
     }
 }

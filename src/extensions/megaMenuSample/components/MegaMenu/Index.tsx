@@ -2,10 +2,12 @@ import { Log } from '@microsoft/sp-core-library';
 import { override } from '@microsoft/decorators';
 import * as React from 'react';
 //import * as pnp from "sp-pnp-js";
+import { IconButton, IButtonProps } from 'office-ui-fabric-react/lib/Button';
 import { Spinner, SpinnerType } from "office-ui-fabric-react/lib/Spinner";
 import styles from './MegaMenu.module.scss';
 import { IMegaMenuLinkItem } from './IMegaMenuLinkItem';
 import { MegaMenuData } from './MegaMenyData';
+
 
 import { SPHttpClient, SPHttpClientResponse } from '@microsoft/sp-http';
 
@@ -18,6 +20,7 @@ export interface IMegaMenuProps {
 export interface IMegaMenuState {
     items?: Array<any>;
     isLoading?: boolean;
+    isVisible?: boolean;
     isHidden?: boolean;
     loadingScripts?: boolean;
     errors?: Array<any>;
@@ -32,6 +35,7 @@ export default class MegaMenu extends React.Component<IMegaMenuProps, IMegaMenuS
         this.state = {
             items: [],
             isLoading: true,
+            isVisible: false,
             isHidden: true
         };
     }
@@ -48,22 +52,33 @@ export default class MegaMenu extends React.Component<IMegaMenuProps, IMegaMenuS
 
     @override
     public render(): React.ReactElement<{}> {
-        let { isLoading, items } = this.state;
+        let { isLoading, items, isVisible } = this.state;
         let { listName, siteUrl, spHttpClient } = this.props;
         let mmElements = items.map((section) => {
             let links = section.Links.map((link) => {
-                return (<a href={link.Url}>{link.Description}</a>);
+                return (
+                    <a href={link.Url}>{link.Description}</a>
+                );
             });
-            return (<div><h1>{section.Title}</h1><div>{links}</div></div>);
+            return (
+                <div id="MegaMenuId" className={styles.container}><h1>{section.Title}</h1>
+                    <div>{links}</div>
+                </div>
+            );
         });
-
         if (isLoading) {
             return <Spinner type={SpinnerType.large} />;
         } else {
 
             return (
-                <div style={styles}>
-                    {mmElements}
+                <div className={styles.Megamenu}>
+                    {(isVisible) ? mmElements : null}
+                    <div className={styles.toogleButton}>
+                        <IconButton
+                            iconProps={{ iconName: 'ChevronDown' }}
+                            title='ChevronDown'
+                            ariaLabel='ChevronDown' />
+                    </div>
                 </div >
             );
         }
