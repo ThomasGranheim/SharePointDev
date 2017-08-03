@@ -60,7 +60,7 @@ export default class MegaMenu extends React.Component<IMegaMenuProps, IMegaMenuS
         let mmElements = items.map((section) => {
             let links = section.Links.map((link) => {
                 return (
-                    <li><a href={link.Url}>{link.Description}</a></li>
+                    <li className={styles.cell}><a href={link.Url}>{link.Description}</a></li>
                 );
             });
             return (
@@ -77,12 +77,12 @@ export default class MegaMenu extends React.Component<IMegaMenuProps, IMegaMenuS
             return (
                 <div className={styles.Megamenu}>
                     {(isVisible) ? mmElements : null}
-                    <div className={styles.toogleButton}>
+                    <div onClick={this.toggleMegaMenu} className={styles.toogleButton}>
                         <IconButton
-                            iconProps={{ iconName: 'ChevronDown' }}
+                            iconProps={(isVisible) ? { iconName: 'ChevronUp' } : { iconName: 'ChevronDown' }}
                             title='ChevronDown'
                             ariaLabel='ChevronDown'
-                            onClick={this.toggleMegaMenu} />
+                        />
                     </div>
                 </div >
             );

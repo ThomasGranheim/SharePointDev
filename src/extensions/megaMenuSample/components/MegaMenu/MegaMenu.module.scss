@@ -1,17 +1,26 @@
 .Megamenu {
-    background-color: #0078d7;
+    background-color: #2488d8;
     color: white;
     .cell {
         display: 'inline-block';
         a {
-            text-decoration: none;
             color: white;
         }
     }
     .container {
-        width: 120;
+        padding: 10px 0px 0px 20px;
     }
     .toogleButton {
+        background-color: #0078d7;
         text-align: center;
+        &:hover {
+            background-color: #2488d8;
+        }
+        button {
+            width: 100%;
+            &:hover {
+                color: white;
+            }
+        }
     }
 }
