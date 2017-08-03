@@ -1,14 +1,22 @@
 export const MegaMenuData = [
     {
-        "Title": "element 1",
-        "Id": 1
+        "Title": "Primary section",
+        "Id": 1,
+        "Links": [
+            {
+                "Description": "Dagens næringsliv",
+                "Url": "http://dn.no"
+            }
+        ]
     },
     {
-        "Title": "element 1",
-        "Id": 2
-    },
-    {
-        "Title": "element 2",
-        "Id": 2
+        "Title": "Secondary section",
+        "Id": 2,
+        "Links": [
+            {
+                "Description": "VG",
+                "Url": "http://vg.no"
+            }
+        ]
     }
 ];

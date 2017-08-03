@@ -50,17 +50,21 @@ export default class MegaMenu extends React.Component<IMegaMenuProps, IMegaMenuS
     public render(): React.ReactElement<{}> {
         let { isLoading, items } = this.state;
         let { listName, siteUrl, spHttpClient } = this.props;
-        let mmElements = items.map((elem, i) => {
-            return (<div>{elem.Title}</div>);
-        }); 
+        let mmElements = items.map((section) => {
+            let links = section.Links.map((link) => {
+                return (<a href={link.Url}>{link.Description}</a>);
+            });
+            return (<div><h1>{section.Title}</h1><div>{links}</div></div>);
+        });
 
         if (isLoading) {
             return <Spinner type={SpinnerType.large} />;
         } else {
+
             return (
                 <div style={styles}>
                     {mmElements}
-                </div>
+                </div >
             );
         }
     }
