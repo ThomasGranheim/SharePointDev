@@ -3,11 +3,11 @@ import { override } from '@microsoft/decorators';
 import * as React from 'react';
 import * as $ from "jquery";
 //import * as pnp from "sp-pnp-js";
-import { IconButton, IButtonProps } from 'office-ui-fabric-react/lib/Button';
+import { CommandButton, IButtonProps } from 'office-ui-fabric-react/lib/Button';
 import { Spinner, SpinnerType } from "office-ui-fabric-react/lib/Spinner";
 import styles from './MegaMenu.module.scss';
 import { IMegaMenuLinkItem } from './IMegaMenuLinkItem';
-import { MegaMenuData } from './MegaMenyData';
+import { MMData } from './MMData';
 
 
 import { SPHttpClient, SPHttpClientResponse } from '@microsoft/sp-http';
@@ -58,15 +58,22 @@ export default class MegaMenu extends React.Component<IMegaMenuProps, IMegaMenuS
         let { isLoading, items, isVisible } = this.state;
         let { listName, siteUrl, spHttpClient } = this.props;
         let mmElements = items.map((section) => {
-            let links = section.Links.map((link) => {
+            let headerLinks = section.HeaderLinks.map((hederLink) => {
+                let links = hederLink.Links.map((link) => {
+                    return <div className={styles.link}><a href={link.Url}>{link.Description}</a></div>
+                })
                 return (
-                    <li className={styles.cell}><a href={link.Url}>{link.Description}</a></li>
+                    <div className={styles.headerLink}>
+                        <a className={styles.headerLinkLabel} href={hederLink.Url}>{hederLink.Description}</a>
+                        <div>
+                            {links}
+                        </div>
+                    </div>
                 );
             });
             return (
-                <div id={MEGA_MENU_ID} className={styles.container}>
-                    <div>{section.Title}</div>
-                    <ul>{links}</ul>
+                <div className={styles.container}>
+                    <div className={styles.headerLinkContainer}>{headerLinks}</div>
                 </div>
             );
         });
@@ -78,11 +85,12 @@ export default class MegaMenu extends React.Component<IMegaMenuProps, IMegaMenuS
                 <div className={styles.Megamenu}>
                     {(isVisible) ? mmElements : null}
                     <div onClick={this.toggleMegaMenu} className={styles.toogleButton}>
-                        <IconButton
+                        <CommandButton
                             iconProps={(isVisible) ? { iconName: 'ChevronUp' } : { iconName: 'ChevronDown' }}
                             title='ChevronDown'
-                            ariaLabel='ChevronDown'
-                        />
+                            ariaLabel='ChevronDown'>
+                            Navigate
+                        </CommandButton>
                     </div>
                 </div >
             );
@@ -99,20 +107,15 @@ export default class MegaMenu extends React.Component<IMegaMenuProps, IMegaMenuS
         //         this.setState({ taxonomy: response.value, isLoading: false });
         //     }); 
         this.setState({
-            items: MegaMenuData,
+            items: MMData,
             isLoading: false
         })
     }
+    /**
+     * Toggles the mega menu
+     */
     private toggleMegaMenu() {
-        if (this.state.isVisible) {
-            this.setState({
-                isVisible: false
-            })
-        }
-        else {
-            this.setState({
-                isVisible: true
-            })
-        }
+        (this.state.isVisible) ? this.setState({ isVisible: false }) : this.setState({ isVisible: true });
+        Log.info(LOG_SOURCE, 'React Element: Toggle Mega Menu');
     }
 }

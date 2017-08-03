@@ -1,24 +1,37 @@
 .Megamenu {
     background-color: #2488d8;
     color: white;
-    .cell {
-        display: 'inline-block';
-        a {
-            color: white;
+    a {
+        color: white;
+        text-decoration: none;
+    }
+    .headerLinkContainer {
+        display: flex;
+        .headerLink {
+            padding: 5px;
+            flex-grow: 1;
+            display: 'inline-block';
+            .headerLinkLabel {
+                font-weight: bold;
+            }
         }
     }
+    .link {
+        padding-top: 5px;
+    }
     .container {
-        padding: 10px 0px 0px 20px;
+        padding: 5px 0px 15px 20px;
+        &:first-child {
+            border-bottom: 1px solid white;
+        }
     }
     .toogleButton {
         background-color: #0078d7;
         text-align: center;
-        &:hover {
-            background-color: #2488d8;
-        }
+        cursor: pointer;
         button {
-            width: 100%;
-            &:hover {
+            color: white;
+            i {
                 color: white;
             }
         }
