@@ -27,6 +27,7 @@ export interface IMegaMenuState {
 }
 
 const LOG_SOURCE: string = 'MegaMenu';
+const MEGA_MENU_ID: string = 'MegaMenuId';
 
 export default class MegaMenu extends React.Component<IMegaMenuProps, IMegaMenuState> {
     constructor(props: IMegaMenuProps, state: IMegaMenuState) {
@@ -57,12 +58,13 @@ export default class MegaMenu extends React.Component<IMegaMenuProps, IMegaMenuS
         let mmElements = items.map((section) => {
             let links = section.Links.map((link) => {
                 return (
-                    <a href={link.Url}>{link.Description}</a>
+                    <li><a href={link.Url}>{link.Description}</a></li>
                 );
             });
             return (
-                <div id="MegaMenuId" className={styles.container}><h1>{section.Title}</h1>
-                    <div>{links}</div>
+                <div id={MEGA_MENU_ID} className={styles.container}>
+                    <div>{section.Title}</div>
+                    <ul>{links}</ul>
                 </div>
             );
         });
@@ -72,7 +74,7 @@ export default class MegaMenu extends React.Component<IMegaMenuProps, IMegaMenuS
 
             return (
                 <div className={styles.Megamenu}>
-                    {(isVisible) ? mmElements : null}
+                    {(!isVisible) ? mmElements : null}
                     <div className={styles.toogleButton}>
                         <IconButton
                             iconProps={{ iconName: 'ChevronDown' }}

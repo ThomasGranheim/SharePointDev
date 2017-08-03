@@ -3,6 +3,10 @@
     color: white;
     .cell {
         display: 'inline-block';
+        a {
+            text-decoration: none;
+            color: white;
+        }
     }
     .container {
         width: 120;
