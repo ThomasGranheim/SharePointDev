@@ -72,7 +72,7 @@ export default class MegaMenu extends React.Component<IMegaMenuProps, IMegaMenuS
                 );
             });
             return (
-                <div className={styles.container}>
+                <div style={{ backgroundColor: section.color }} className={styles.container}>
                     <div className={styles.headerLinkContainer}>{headerLinks}</div>
                 </div>
             );

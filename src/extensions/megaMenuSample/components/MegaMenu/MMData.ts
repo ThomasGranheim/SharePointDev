@@ -4,6 +4,7 @@
 
 export const MMData = [
     {
+        "color": "#004b50",
         "Title": "Primary section",
         "Id": 1,
         "HeaderLinks": [
@@ -24,13 +25,19 @@ export const MMData = [
                         "Url": "http://vg.no"
                     },
                     {
-                        "Description": "Finance",
+                        "Description": "HR",
+                        "Url": "http://vg.no"
+                    },
+                    {
+                        "Description": "IT",
                         "Url": "http://vg.no"
                     }
+
+
                 ]
             },
             {
-                "Description": "Dagens næringsliv",
+                "Description": "",
                 "Url": "http://dn.no",
                 "Links": [
                     {
@@ -120,6 +127,7 @@ export const MMData = [
         ]
     },
     {
+        "color": "#008272",
         "Title": "Secondary section",
         "Id": 2,
         "HeaderLinks": [

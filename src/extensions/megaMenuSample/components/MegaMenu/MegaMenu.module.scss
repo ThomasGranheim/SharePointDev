@@ -1,5 +1,4 @@
 .Megamenu {
-    background-color: #2488d8;
     color: white;
     a {
         color: white;
@@ -21,12 +20,9 @@
     }
     .container {
         padding: 5px 0px 15px 20px;
-        &:first-child {
-            border-bottom: 1px solid white;
-        }
     }
     .toogleButton {
-        background-color: #0078d7;
+        background-color: #00B294;
         text-align: center;
         cursor: pointer;
         button {
