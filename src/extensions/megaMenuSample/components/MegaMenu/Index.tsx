@@ -28,7 +28,6 @@ export interface IMegaMenuState {
 }
 
 const LOG_SOURCE: string = 'MegaMenu';
-const MEGA_MENU_ID: string = 'MegaMenuId';
 
 export default class MegaMenu extends React.Component<IMegaMenuProps, IMegaMenuState> {
     constructor(props: IMegaMenuProps, state: IMegaMenuState) {
@@ -37,6 +36,7 @@ export default class MegaMenu extends React.Component<IMegaMenuProps, IMegaMenuS
         this.toggleMegaMenu = this.toggleMegaMenu.bind(this);
         this.state = {
             items: [],
+
             isLoading: true,
             isVisible: false,
             isHidden: true
