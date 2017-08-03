@@ -1,6 +1,7 @@
 import { Log } from '@microsoft/sp-core-library';
 import { override } from '@microsoft/decorators';
 import * as React from 'react';
+import * as $ from "jquery";
 //import * as pnp from "sp-pnp-js";
 import { IconButton, IButtonProps } from 'office-ui-fabric-react/lib/Button';
 import { Spinner, SpinnerType } from "office-ui-fabric-react/lib/Spinner";
@@ -33,6 +34,7 @@ export default class MegaMenu extends React.Component<IMegaMenuProps, IMegaMenuS
     constructor(props: IMegaMenuProps, state: IMegaMenuState) {
         super(props);
         let items = Array<IMegaMenuLinkItem>();
+        this.toggleMegaMenu = this.toggleMegaMenu.bind(this);
         this.state = {
             items: [],
             isLoading: true,
@@ -74,12 +76,13 @@ export default class MegaMenu extends React.Component<IMegaMenuProps, IMegaMenuS
 
             return (
                 <div className={styles.Megamenu}>
-                    {(!isVisible) ? mmElements : null}
+                    {(isVisible) ? mmElements : null}
                     <div className={styles.toogleButton}>
                         <IconButton
                             iconProps={{ iconName: 'ChevronDown' }}
                             title='ChevronDown'
-                            ariaLabel='ChevronDown' />
+                            ariaLabel='ChevronDown'
+                            onClick={this.toggleMegaMenu} />
                     </div>
                 </div >
             );
@@ -99,5 +102,17 @@ export default class MegaMenu extends React.Component<IMegaMenuProps, IMegaMenuS
             items: MegaMenuData,
             isLoading: false
         })
+    }
+    private toggleMegaMenu() {
+        if (this.state.isVisible) {
+            this.setState({
+                isVisible: false
+            })
+        }
+        else {
+            this.setState({
+                isVisible: true
+            })
+        }
     }
 }
