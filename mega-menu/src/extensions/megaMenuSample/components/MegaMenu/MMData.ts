@@ -197,6 +197,28 @@ export const MMData = [
                         "Url": "http://vg.no"
                     }
                 ]
+            },
+            {
+                "Description": "Finance",
+                "Url": "http://vg.no",
+                "Links": [
+                    {
+                        "Description": "Communication",
+                        "Url": "http://vg.no"
+                    },
+                    {
+                        "Description": "Operations",
+                        "Url": "http://vg.no"
+                    },
+                    {
+                        "Description": "Finance",
+                        "Url": "http://vg.no"
+                    },
+                    {
+                        "Description": "Finance",
+                        "Url": "http://vg.no"
+                    }
+                ]
             }
         ]
     }

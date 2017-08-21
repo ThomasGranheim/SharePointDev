@@ -92,7 +92,7 @@ export default class MegaMenu extends React.Component<IMegaMenuProps, IMegaMenuS
                             Navigate
                         </CommandButton>
                     </div>
-                </div >
+                </div>
             );
         }
     }
