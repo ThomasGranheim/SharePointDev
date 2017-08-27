@@ -1,0 +1,10 @@
+{
+  "solution": {
+    "name": "company-details-header-client-side-solution",
+    "id": "241591cc-c240-4aff-b8c5-56402623e2c2",
+    "version": "1.0.0.0"
+  },
+  "paths": {
+    "zippedPackage": "solution/company-details-header.sppkg"
+  }
+}

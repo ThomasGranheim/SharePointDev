@@ -1,0 +1,13 @@
+{
+  "entries": [
+    {
+      "entry": "./lib/extensions/companyDetailsHeader/CompanyDetailsHeaderApplicationCustomizer.js",
+      "manifest": "./src/extensions/companyDetailsHeader/CompanyDetailsHeaderApplicationCustomizer.manifest.json",
+      "outputPath": "./dist/company-details-header.bundle.js"
+    }
+  ],
+  "externals": {},
+  "localizedResources": {
+    "companyDetailsHeaderStrings": "extensions/companyDetailsHeader/loc/{locale}.js"
+  }
+}

@@ -14,6 +14,9 @@
                 font-weight: bold;
             }
         }
+        @media (max-width: 500px) {
+            display: 'block';
+        }
     }
     .link {
         padding-top: 5px;

@@ -39,10 +39,11 @@ export default class MegaMenuSampleApplicationCustomizer
 
   @override
   public onRender(): void {
+    console.log(this.context.placeholders.placeholderNames);
     // Handling the header placeholder
     if (!this._headerPlaceholder) {
       this._headerPlaceholder = this.context.placeholders.tryAttach(
-        'PageHeader',
+        'Top',
         {
           onDispose: this._onDispose
         });
@@ -54,6 +55,7 @@ export default class MegaMenuSampleApplicationCustomizer
       }
 
       if (this.properties) {
+        console.log("Attach complete.")
         let headerString: string = this.properties.Header;
         if (!headerString) {
           headerString = '(Header property was not defined.)';
@@ -63,8 +65,7 @@ export default class MegaMenuSampleApplicationCustomizer
           const megamenu: React.ReactElement<{}> =
             React.createElement(MegaMenu, {
               spHttpClient: this.context.spHttpClient,
-              siteUrl: this.context.pageContext.web.absoluteUrl,
-              listName: "Source"
+              siteUrl: this.context.pageContext.web.absoluteUrl
             } as IMegaMenuProps);
 
           ReactDOM.render(megamenu, this._headerPlaceholder.domElement);

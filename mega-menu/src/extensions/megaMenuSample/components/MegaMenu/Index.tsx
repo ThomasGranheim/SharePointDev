@@ -13,7 +13,6 @@ import { MMData } from './MMData';
 import { SPHttpClient, SPHttpClientResponse } from '@microsoft/sp-http';
 
 export interface IMegaMenuProps {
-    listName: string;
     siteUrl: string;
     spHttpClient: SPHttpClient;
 }
@@ -22,7 +21,6 @@ export interface IMegaMenuState {
     items?: Array<any>;
     isLoading?: boolean;
     isVisible?: boolean;
-    isHidden?: boolean;
     loadingScripts?: boolean;
     errors?: Array<any>;
 }
@@ -36,10 +34,8 @@ export default class MegaMenu extends React.Component<IMegaMenuProps, IMegaMenuS
         this.toggleMegaMenu = this.toggleMegaMenu.bind(this);
         this.state = {
             items: [],
-
             isLoading: true,
             isVisible: false,
-            isHidden: true
         };
     }
     @override
@@ -56,7 +52,7 @@ export default class MegaMenu extends React.Component<IMegaMenuProps, IMegaMenuS
     @override
     public render(): React.ReactElement<{}> {
         let { isLoading, items, isVisible } = this.state;
-        let { listName, siteUrl, spHttpClient } = this.props;
+        let { siteUrl, spHttpClient } = this.props;
         let mmElements = items.map((section) => {
             let headerLinks = section.HeaderLinks.map((hederLink) => {
                 let links = hederLink.Links.map((link) => {
