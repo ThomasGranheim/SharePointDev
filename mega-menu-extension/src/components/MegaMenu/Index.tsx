@@ -1,7 +1,6 @@
 import { Log } from '@microsoft/sp-core-library';
 import { override } from '@microsoft/decorators';
 import * as React from 'react';
-import * as $ from "jquery";
 //import * as pnp from "sp-pnp-js";
 import { CommandButton, IButtonProps } from 'office-ui-fabric-react/lib/Button';
 import { Spinner, SpinnerType } from "office-ui-fabric-react/lib/Spinner";

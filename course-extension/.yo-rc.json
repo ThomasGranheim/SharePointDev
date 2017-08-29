@@ -1,0 +1,8 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "version": "1.2.0",
+    "libraryName": "course-extension",
+    "libraryId": "d5e380b5-399d-4b2c-bf5e-aaf16cf14ed4",
+    "environment": "spo"
+  }
+}

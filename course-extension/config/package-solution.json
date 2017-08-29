@@ -1,0 +1,12 @@
+{
+  "$schema": "https://dev.office.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "course-extension-client-side-solution",
+    "id": "d5e380b5-399d-4b2c-bf5e-aaf16cf14ed4",
+    "version": "1.0.0.0",
+    "skipFeatureDeployment": true
+  },
+  "paths": {
+    "zippedPackage": "solution/course-extension.sppkg"
+  }
+}

@@ -34,6 +34,7 @@ export default class MegaMenuSampleApplicationCustomizer
   @override
   public onInit(): Promise<void> {
     Log.info(LOG_SOURCE, `Initialized ${strings.Title}`);
+    console.log("hei");
     return Promise.resolve<void>();
   }
 

@@ -1,0 +1,18 @@
+{
+  "$schema": "https://dev.office.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "course-extension-application-customizer": {
+      "components": [
+        {
+          "entrypoint": "./lib/extensions/courseExtension/CourseExtensionApplicationCustomizer.js",
+          "manifest": "./src/extensions/courseExtension/CourseExtensionApplicationCustomizer.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "CourseExtensionApplicationCustomizerStrings": "lib/extensions/courseExtension/loc/{locale}.js"
+  }
+}
