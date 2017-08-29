@@ -27,11 +27,14 @@ export interface ICourseExtensionApplicationCustomizerProperties {
 export default class CourseExtensionApplicationCustomizer
   extends BaseApplicationCustomizer<ICourseExtensionApplicationCustomizerProperties> {
   private _placeholder: PlaceholderContent;
+
   @override
   public onInit(): Promise<void> {
+
     Log.info(LOG_SOURCE, `Initialized ${strings.Title}`);
 
-    this._placeholder = this.context.placeholderProvider.tryCreateContent(PlaceholderName.Top);
+    this._placeholder = this.context.placeholderProvider.tryCreateContent(PlaceholderName.Bottom);
+
     if (this._placeholder) {
       const courseDtails: React.ReactElement<{}> =
         React.createElement(CourseDetails, {

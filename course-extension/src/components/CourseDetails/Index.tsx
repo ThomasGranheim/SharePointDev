@@ -15,9 +15,6 @@ export interface ICourseDetailsProps {
 }
 
 export interface ICourseDetailsState {
-    items?: Array<any>;
-    isLoading?: boolean;
-    isVisible?: boolean;
     loadingScripts?: boolean;
     errors?: Array<any>;
 }
@@ -27,16 +24,10 @@ const LOG_SOURCE: string = 'CourseDetails';
 export default class CourseDetails extends React.Component<ICourseDetailsProps, ICourseDetailsState> {
     constructor(props: ICourseDetailsProps, state: ICourseDetailsState) {
         super(props);
-        this.state = {
-            items: [],
-            isLoading: true,
-            isVisible: false,
-        };
     }
     @override
     public componentDidMount(): void {
         Log.info(LOG_SOURCE, 'React Element: CourseDetails  mounted');
-        this.fetchData();
     }
 
     @override
@@ -46,42 +37,20 @@ export default class CourseDetails extends React.Component<ICourseDetailsProps, 
 
     @override
     public render(): React.ReactElement<{}> {
-        let { isLoading, items, isVisible } = this.state;
         let { siteUrl, spHttpClient } = this.props;
+        return (
+            <div className={styles.CourseDetails}>
+                <div>
+                    <strong>This site contains classified information</strong>
 
-        if (isLoading) {
-            return <Spinner type={SpinnerType.large} />;
-        } else {
-
-            return (
-                <div className={styles.CourseDetails}>
-                    <div> Mountain hiking course  </div>
-                    <div> 18:00 </div>
-                    <div> 17/20 persons </div>
-                    <div> Oslo, Norway</div>
-                    <div> </div>
-                    <CommandButton
-                        iconProps={{ iconName: 'Smile' }}
-                        title='ToggleButton'
-                        ariaLabel='ToggleButton'>
-                        Go hiking!
-                        </CommandButton>
                 </div>
-            );
-        }
-    }
-    private fetchData() {
-        this.getListData();
-    }
-    private getListData(): void {
-        // this.props.spHttpClient.get(`${this.props.siteUrl}/_api/web/lists/getByTitle('Source')/items`, SPHttpClient.configurations.v1)
-        //     .then((response: SPHttpClientResponse): Promise<{ value: Array<IMegaMenuLinkItem> }> => {
-        //         return response.json();
-        //     }).then((response: { value: Array<IMegaMenuLinkItem> }) => { 
-        //         this.setState({ taxonomy: response.value, isLoading: false });
-        //     }); 
-        this.setState({
-            isLoading: false
-        });
+                <div>
+                    Level <strong>Restricted</strong>
+                </div>
+                <div>
+                    <a href={this.props.siteUrl}>Read the manual!</a>
+                </div>
+            </div>
+        );
     }
 }
