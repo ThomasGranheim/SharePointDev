@@ -45,7 +45,7 @@ export default class CourseDetails extends React.Component<ICourseDetailsProps, 
 
                 </div>
                 <div>
-                    Level <strong>Restricted</strong>
+                    Sensitivity Level <strong>Restricted</strong>
                 </div>
                 <div>
                     <a href={this.props.siteUrl}>Read the manual!</a>

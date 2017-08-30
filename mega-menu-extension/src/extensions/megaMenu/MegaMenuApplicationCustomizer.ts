@@ -8,7 +8,7 @@ import {
   PlaceholderName
 } from '@microsoft/sp-application-base';
 
-import MegaMenu, { IMegaMenuProps } from '../../components/megamenu';
+import MegaMenu, { IMegaMenuProps } from '../../components/MegaMenu/Index';
 
 import * as strings from 'MegaMenuApplicationCustomizerStrings';
 
@@ -27,20 +27,23 @@ export interface IMegaMenuApplicationCustomizerProperties {
 /** A Custom Action which can be run during execution of a Client Side Application */
 export default class MegaMenuApplicationCustomizer
   extends BaseApplicationCustomizer<IMegaMenuApplicationCustomizerProperties> {
-  private _placeholder: 
+  private _placeholder: PlaceholderContent;
+
   @override
   public onInit(): Promise<void> {
     Log.info(LOG_SOURCE, `Initialized ${strings.Title}`);
+
     this._placeholder = this.context.placeholderProvider.tryCreateContent(PlaceholderName.Top);
     if (this._placeholder) {
-      const helloWorld: React.ReactElement<{}> =
+      const megaMenu: React.ReactElement<{}> =
         React.createElement(MegaMenu, {
           spHttpClient: this.context.spHttpClient,
           siteUrl: this.context.pageContext.web.absoluteUrl
         } as IMegaMenuProps);
 
-      ReactDOM.render(helloWorld, this._placeholder.domElement);
+      ReactDOM.render(megaMenu, this._placeholder.domElement);
     }
+
     return Promise.resolve<void>();
   }
 }

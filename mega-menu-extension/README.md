@@ -24,3 +24,6 @@ gulp test - TODO
 gulp serve - TODO
 gulp bundle - TODO
 gulp package-solution - TODO
+
+
+?loadSPFX=true&debugManifestsFile=https://localhost:4321/temp/manifests.js&customActions={"9ad64a3e-97a9-40da-8ef9-4e15f1ed81b4":{"location":"ClientSideExtension.ApplicationCustomizer","properties":{"Property1":"value"}}}
