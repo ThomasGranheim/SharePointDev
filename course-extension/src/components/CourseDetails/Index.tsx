@@ -42,7 +42,6 @@ export default class CourseDetails extends React.Component<ICourseDetailsProps, 
             <div className={styles.CourseDetails}>
                 <div>
                     <strong>This site contains classified information</strong>
-
                 </div>
                 <div>
                     Sensitivity Level <strong>Restricted</strong>

@@ -9,95 +9,113 @@ export const MMData = [
         "Id": 1,
         "HeaderLinks": [
             {
-                "Description": "Departments",
+                "Description": "Shared Functions",
                 "Url": "http://dn.no",
                 "Links": [
                     {
                         "Description": "Communication",
-                        "Url": "http://vg.no"
+                        "Url": "https://okan.sharepoint.com/sites/Legal"
                     },
                     {
                         "Description": "Operations",
-                        "Url": "http://vg.no"
+                        "Url": "https://okan.sharepoint.com/sites/Legal"
                     },
                     {
                         "Description": "Finance",
-                        "Url": "http://vg.no"
+                        "Url": "https://okan.sharepoint.com/sites/Legal"
                     },
                     {
                         "Description": "HR",
-                        "Url": "http://vg.no"
+                        "Url": "https://okan.sharepoint.com/sites/Legal"
                     },
                     {
                         "Description": "IT",
-                        "Url": "http://vg.no"
+                        "Url": "https://okan.sharepoint.com/sites/Legal"
+                    },
+                    {
+                        "Description": "Administration",
+                        "Url": "https://okan.sharepoint.com/sites/Legal"
+                    },
+                    {
+                        "Description": "Legal",
+                        "Url": "https://okan.sharepoint.com/sites/Legal"
                     }
 
 
                 ]
             },
             {
-                "Description": "",
+                "Description": "Offices",
                 "Url": "http://dn.no",
                 "Links": [
                     {
-                        "Description": "Communication",
+                        "Description": "Oslo",
+                        "Url": "https://okan.sharepoint.com/sites/Legal"
+                    },
+                    {
+                        "Description": "London",
+                        "Url": "https://okan.sharepoint.com/sites/Legal"
+                    },
+                    {
+                        "Description": "Stockholm",
+                        "Url": "https://okan.sharepoint.com/sites/Legal"
+                    },
+                    {
+                        "Description": "Tokyo",
+                        "Url": "https://okan.sharepoint.com/sites/Legal"
+                    },
+                    {
+                        "Description": "New York",
+                        "Url": "https://okan.sharepoint.com/sites/Legal"
+                    }
+                    ,
+                    {
+                        "Description": "Bergen",
+                        "Url": "https://okan.sharepoint.com/sites/Legal"
+                    }
+
+                ]
+            },
+            {
+                "Description": "Travel",
+                "Url": "http://dn.no",
+                "Links": [
+                    {
+                        "Description": "Visumservice",
+                        "Url": "https://okan.sharepoint.com/sites/Legal"
+                    },
+                    {
+                        "Description": "Travel policy",
                         "Url": "http://vg.no"
                     },
                     {
-                        "Description": "Operations",
+                        "Description": "ISOS",
                         "Url": "http://vg.no"
                     },
                     {
-                        "Description": "Finance",
-                        "Url": "http://vg.no"
-                    },
-                    {
-                        "Description": "Finance",
+                        "Description": "Travel agency",
                         "Url": "http://vg.no"
                     }
                 ]
             },
             {
-                "Description": "Dagens næringsliv",
+                "Description": "Human resources",
                 "Url": "http://dn.no",
                 "Links": [
                     {
-                        "Description": "Communication",
+                        "Description": "Recruitment",
                         "Url": "http://vg.no"
                     },
                     {
-                        "Description": "Operations",
+                        "Description": "Induction",
                         "Url": "http://vg.no"
                     },
                     {
-                        "Description": "Finance",
+                        "Description": "Performance management",
                         "Url": "http://vg.no"
                     },
                     {
-                        "Description": "Finance",
-                        "Url": "http://vg.no"
-                    }
-                ]
-            },
-            {
-                "Description": "Dagens næringsliv",
-                "Url": "http://dn.no",
-                "Links": [
-                    {
-                        "Description": "Communication",
-                        "Url": "http://vg.no"
-                    },
-                    {
-                        "Description": "Operations",
-                        "Url": "http://vg.no"
-                    },
-                    {
-                        "Description": "Finance",
-                        "Url": "http://vg.no"
-                    },
-                    {
-                        "Description": "Finance",
+                        "Description": "Compensation & benefits",
                         "Url": "http://vg.no"
                     }
                 ]
