@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+    <Field ID="{9113fbcb-62cb-4be6-9efb-3f01686b9ffe}"
+         Name="ExtentionReview"
+         DisplayName="Review"
+         Type="Choice"
+         Required="FALSE"
+         Group="Extention Columns"
+         ClientSideComponentId="26bb8192-d0c4-4199-a15a-5dd517de8742">
+    <CHOICES>
+      <CHOICE>Super happy</CHOICE>
+      <CHOICE>Good</CHOICE>
+      <CHOICE>Ok</CHOICE>
+      <CHOICE>Bad</CHOICE>
+    </CHOICES>
+  </Field>
+</Elements>

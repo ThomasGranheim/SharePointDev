@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+    <CustomAction 
+        Title="MegaMenuApplicationCustomizer"
+        Location="ClientSideExtension.ApplicationCustomizer"
+        ClientSideComponentId="9ad64a3e-97a9-40da-8ef9-4e15f1ed81b4"
+        ClientSideComponentProperties="{&quot;Label&quot;:&quot;Navigate&quot;}">
+    </CustomAction>
+</Elements>

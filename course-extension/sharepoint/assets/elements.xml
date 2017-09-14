@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+    <CustomAction 
+        Title="ConfidentialFooterApplicationCustomizer"
+        Location="ClientSideExtension.ApplicationCustomizer"
+        ClientSideComponentId="2ea6ce3f-088f-4fa9-9020-3ea390515aa5"
+        ClientSideComponentProperties="{&quot;Label&quot;:&quot;Navigate&quot;}">
+    </CustomAction>
+</Elements>

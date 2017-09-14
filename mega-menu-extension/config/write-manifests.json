@@ -1,4 +1,3 @@
 {
-  "$schema": "https://dev.office.com/json-schemas/spfx-build/write-manifests.schema.json",
-  "cdnBasePath": "<!-- PATH TO CDN -->"
+  "cdnBasePath": "https://publiccdn.sharepointonline.com/okan.sharepoint.com/sites/okan-cdn/cdn/megamenu"
 }

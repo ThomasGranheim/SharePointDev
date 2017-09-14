@@ -121,24 +121,20 @@ export const MMData = [
                 ]
             },
             {
-                "Description": "Dagens næringsliv",
+                "Description": "Links",
                 "Url": "http://dn.no",
                 "Links": [
                     {
-                        "Description": "Communication",
-                        "Url": "http://vg.no"
+                        "Description": "Search Center",
+                        "Url": "https://okan.sharepoint.com/sites/Legal"
                     },
                     {
-                        "Description": "Operations",
-                        "Url": "http://vg.no"
+                        "Description": "Course Center",
+                        "Url": "https://okan.sharepoint.com/sites/CourseCenter"
                     },
                     {
-                        "Description": "Finance",
-                        "Url": "http://vg.no"
-                    },
-                    {
-                        "Description": "Finance",
-                        "Url": "http://vg.no"
+                        "Description": "Workplace",
+                        "Url": "https://okan.sharepoint.com/sites/Workplace"
                     }
                 ]
             }
@@ -150,7 +146,7 @@ export const MMData = [
         "Id": 2,
         "HeaderLinks": [
             {
-                "Description": "Communication",
+                "Description": "Corporate Services",
                 "Url": "http://vg.no",
                 "Links": [
                     {
@@ -158,15 +154,15 @@ export const MMData = [
                         "Url": "http://vg.no"
                     },
                     {
-                        "Description": "Operations",
+                        "Description": "Human resources",
                         "Url": "http://vg.no"
                     },
                     {
-                        "Description": "Finance",
+                        "Description": "IT",
                         "Url": "http://vg.no"
                     },
                     {
-                        "Description": "Finance",
+                        "Description": "Legal",
                         "Url": "http://vg.no"
                     }
                 ]
@@ -177,63 +173,59 @@ export const MMData = [
                 "Url": "http://vg.no",
                 "Links": [
                     {
-                        "Description": "Communication",
+                        "Description": "Commercial",
+                        "Url": "http://vg.no"
+                    },
+                    {
+                        "Description": "Fleet mgt",
                         "Url": "http://vg.no"
                     },
                     {
                         "Description": "Operations",
-                        "Url": "http://vg.no"
-                    },
-                    {
-                        "Description": "Finance",
-                        "Url": "http://vg.no"
-                    },
-                    {
-                        "Description": "Finance",
                         "Url": "http://vg.no"
                     }
                 ]
             },
             {
-                "Description": "Finance",
+                "Description": "Relate",
                 "Url": "http://vg.no",
                 "Links": [
                     {
-                        "Description": "Communication",
+                        "Description": "Funnel",
                         "Url": "http://vg.no"
                     },
                     {
-                        "Description": "Operations",
+                        "Description": "Allocation",
                         "Url": "http://vg.no"
                     },
                     {
-                        "Description": "Finance",
+                        "Description": "Customers",
                         "Url": "http://vg.no"
                     },
                     {
-                        "Description": "Finance",
+                        "Description": "Collaboration",
                         "Url": "http://vg.no"
                     }
                 ]
             },
             {
-                "Description": "Finance",
+                "Description": "Business",
                 "Url": "http://vg.no",
                 "Links": [
                     {
-                        "Description": "Communication",
+                        "Description": "Sales",
                         "Url": "http://vg.no"
                     },
                     {
-                        "Description": "Operations",
+                        "Description": "Power BI",
                         "Url": "http://vg.no"
                     },
                     {
-                        "Description": "Finance",
+                        "Description": "Financial Reports",
                         "Url": "http://vg.no"
                     },
                     {
-                        "Description": "Finance",
+                        "Description": "Treasury",
                         "Url": "http://vg.no"
                     }
                 ]

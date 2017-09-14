@@ -9,7 +9,7 @@ import {
 } from '@microsoft/sp-application-base';
 
 import * as strings from 'CourseExtensionApplicationCustomizerStrings';
-import CourseDetails, { ICourseDetailsProps } from '../../components/coursedetails';
+import CourseDetails, { ICourseDetailsProps } from '../../components/CourseDetails/Index';
 
 const LOG_SOURCE: string = 'CourseExtensionApplicationCustomizer';
 

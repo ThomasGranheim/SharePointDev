@@ -1,5 +1,5 @@
 {
-  "name": "course-extension",
+  "name": "demo-field-extension",
   "version": "0.0.1",
   "private": true,
   "engines": {
@@ -11,13 +11,18 @@
     "test": "gulp test"
   },
   "dependencies": {
-    "@microsoft/sp-application-base": "1.2.0",
     "@microsoft/sp-core-library": "~1.2.0",
-    "@microsoft/sp-listview-extensibility": "1.2.0",
     "@microsoft/sp-webpart-base": "~1.2.0",
     "@types/webpack-env": ">=1.12.1 <1.14.0",
-    "react": "^15.4.2",
-    "react-dom": "^15.4.2"
+    "react": "15.4.2",
+    "react-dom": "15.4.2",
+    "@types/react": "15.0.38",
+    "@types/react-dom": "0.14.18",
+    "@types/react-addons-shallow-compare": "0.14.17",
+    "@types/react-addons-update": "0.14.14",
+    "@types/react-addons-test-utils": "0.14.15",
+    "@microsoft/sp-listview-extensibility": "1.2.0",
+    "@microsoft/sp-application-base": "1.2.0"
   },
   "devDependencies": {
     "@microsoft/sp-build-web": "~1.2.0",

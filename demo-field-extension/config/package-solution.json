@@ -1,0 +1,12 @@
+{
+  "$schema": "https://dev.office.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "demo-field-extension-client-side-solution",
+    "id": "6cc73623-f16a-4e29-9d19-705b80fbc50b",
+    "version": "1.0.0.0",
+    "skipFeatureDeployment": false
+  },
+  "paths": {
+    "zippedPackage": "solution/demo-field-extension.sppkg"
+  }
+}

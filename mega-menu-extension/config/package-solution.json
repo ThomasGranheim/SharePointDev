@@ -4,7 +4,20 @@
     "name": "mega-menu-extension-client-side-solution",
     "id": "2147dacc-eb49-4ebe-8d1b-17e184a47eba",
     "version": "1.0.0.0",
-    "skipFeatureDeployment": true
+    "skipFeatureDeployment": false,
+    "features": [
+      {
+        "title": "Mega Menu - Deployment of custom action.",
+        "description": "Deploys a custom action with ClientSideComponentId association",
+        "id": "ec551e6b-6043-494c-87c5-af9d6d8e54a7",
+        "version": "1.0.0.0",
+        "assets": {
+          "elementManifests": [
+            "elements.xml"
+          ]
+        }
+      }
+    ]
   },
   "paths": {
     "zippedPackage": "solution/mega-menu-extension.sppkg"
