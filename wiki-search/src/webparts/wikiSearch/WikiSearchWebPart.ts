@@ -5,7 +5,6 @@ import {
   BaseClientSideWebPart,
   IPropertyPaneConfiguration,
   PropertyPaneTextField,
-  Propert
 } from '@microsoft/sp-webpart-base';
 
 import * as strings from 'WikiSearchWebPartStrings';

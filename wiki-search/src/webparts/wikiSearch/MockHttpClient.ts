@@ -3,11 +3,11 @@ import { IWiki } from './IWiki';
 export default class MockHttpClient {
 
     private static _items: IWiki[] = [
-        { Title: 'Wiki Page 1', Id: '1' },
-        { Title: 'Wiki Page 2', Id: '2' },
-        { Title: 'Wiki Page 3', Id: '3' },
-        { Title: 'Wiki Page 4', Id: '4' },
-        { Title: 'Wiki Page 5', Id: '5' }
+        { Title: 'Hvordan registrere sykdom?', Id: '1', Topic: 'Sykdom' },
+        { Title: 'Ferielisten', Id: '2', Topic: 'Ferie' },
+        { Title: 'Bonus', Id: '3', Topic: 'Lønn' },
+        { Title: 'Har jeg rett til overtid?', Id: '4', Topic: 'Lønn' },
+        { Title: 'Hvordan søke ferie?', Id: '5', Topic: 'Ferie' }
     ];
 
     public static get(restUrl?: string, options?: any): Promise<IWiki[]> {
