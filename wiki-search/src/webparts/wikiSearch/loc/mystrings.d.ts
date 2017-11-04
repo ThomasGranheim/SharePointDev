@@ -1,7 +1,9 @@
 declare interface IWikiSearchWebPartStrings {
-  PropertyPaneDescription: string;
+  PropertyPaneList: string;
   BasicGroupName: string;
-  DescriptionFieldLabel: string;
+  ListFieldLabel: string;
+  PropertyPaneSearch: string;
+  SearchFieldLabel: string;
 }
 
 declare module 'WikiSearchWebPartStrings' {

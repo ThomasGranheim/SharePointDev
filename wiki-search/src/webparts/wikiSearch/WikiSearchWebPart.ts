@@ -4,7 +4,8 @@ import { Version } from '@microsoft/sp-core-library';
 import {
   BaseClientSideWebPart,
   IPropertyPaneConfiguration,
-  PropertyPaneTextField
+  PropertyPaneTextField,
+  Propert
 } from '@microsoft/sp-webpart-base';
 
 import * as strings from 'WikiSearchWebPartStrings';
@@ -12,16 +13,16 @@ import WikiSearch from './components/WikiSearch';
 import { IWikiSearchProps } from './components/IWikiSearchProps';
 
 export interface IWikiSearchWebPartProps {
-  description: string;
+  searchLabel: string;
 }
 
 export default class WikiSearchWebPart extends BaseClientSideWebPart<IWikiSearchWebPartProps> {
 
   public render(): void {
-    const element: React.ReactElement<IWikiSearchProps > = React.createElement(
+    const element: React.ReactElement<IWikiSearchProps> = React.createElement(
       WikiSearch,
       {
-        description: this.properties.description
+        searchLabel: this.properties.searchLabel
       }
     );
 
@@ -37,14 +38,18 @@ export default class WikiSearchWebPart extends BaseClientSideWebPart<IWikiSearch
       pages: [
         {
           header: {
-            description: strings.PropertyPaneDescription
+            description: "Wiki Search"
           },
           groups: [
             {
-              groupName: strings.BasicGroupName,
+              groupName: "Search Box",
               groupFields: [
-                PropertyPaneTextField('description', {
-                  label: strings.DescriptionFieldLabel
+                PropertyPaneTextField('searchLabel', {
+                  label: "Label",
+
+                }),
+                PropertyPaneTextField('list', {
+                  label: "List",
                 })
               ]
             }

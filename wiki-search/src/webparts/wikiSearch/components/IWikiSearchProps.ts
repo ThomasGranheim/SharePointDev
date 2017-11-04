@@ -1,3 +1,4 @@
+import { IWiki } from './../IWiki';
 export interface IWikiSearchProps {
-  description: string;
+  searchLabel: string;
 }
