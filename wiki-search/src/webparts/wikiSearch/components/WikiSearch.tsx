@@ -57,7 +57,7 @@ export default class WikiSearch extends React.Component<IWikiSearchProps, IWikiS
 
   private onSearch(value: string): void {
     this._getMockListData().then((pages: IWiki[]) => {
-      let filteredPages = pages.filter(_ => _.Title.toLowerCase().indexOf(value.toLowerCase()) >= 0);
+      let filteredPages = pages.filter(_ => _.Title.toLowerCase().indexOf(value.toLowerCase()) >= 0 || _.Topic.toLowerCase().indexOf(value.toLowerCase()) >= 0);
       this.setState({
         pages: filteredPages,
       });

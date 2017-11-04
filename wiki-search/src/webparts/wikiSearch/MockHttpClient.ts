@@ -3,7 +3,7 @@ import { IWiki } from './IWiki';
 export default class MockHttpClient {
 
     private static _items: IWiki[] = [
-        { Title: 'Hvordan registrere sykdom?', Id: '1', Topic: 'Sykdom' },
+        { Title: 'Egenmelding', Id: '1', Topic: 'Sykdom' },
         { Title: 'Ferielisten', Id: '2', Topic: 'Ferie' },
         { Title: 'Bonus', Id: '3', Topic: 'Lønn' },
         { Title: 'Har jeg rett til overtid?', Id: '4', Topic: 'Lønn' },
