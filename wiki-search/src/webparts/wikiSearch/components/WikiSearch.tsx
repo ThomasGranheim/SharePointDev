@@ -21,15 +21,24 @@ export default class WikiSearch extends React.Component<IWikiSearchProps, IWikiS
     let { searchLabel } = this.props;
     let { pages } = this.state;
 
-    let group = pages.reduce((prev, current) => {
-      console.log(prev);
+    let groupObj = pages.reduce((prev, current) => {
       prev[current.Topic] = prev[current.Topic] || new Array();
       prev[current.Topic].push(current)
       return prev;
-    }, [])
-    console.log(group);
-    let pagesElement = pages.map((item, index) => {
-      return (<div key={index}>{item.Title}</div>)
+    }, {});
+
+    let groups = Object.keys(groupObj).map((item: string) => {
+      return { Title: item, Pages: groupObj[item] };
+    });
+
+    let pagesElement = groups.map((group: IGroup, index) => {
+      let pages = group.Pages.map((page: IWiki) => {
+        return <div>{page.Title}</div>
+      });
+      return (<div>
+        <h1 key={index}>{group.Title}</h1>
+        {pages}
+      </div>)
     });
     return (
       <div className={styles.wikiSearch}>
