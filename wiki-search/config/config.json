@@ -1,0 +1,18 @@
+{
+  "$schema": "https://dev.office.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "wiki-search-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/wikiSearch/WikiSearchWebPart.js",
+          "manifest": "./src/webparts/wikiSearch/WikiSearchWebPart.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "WikiSearchWebPartStrings": "lib/webparts/wikiSearch/loc/{locale}.js"
+  }
+}

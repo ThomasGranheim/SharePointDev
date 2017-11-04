@@ -1,0 +1,11 @@
+{
+  "$schema": "https://dev.office.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "wiki-search-client-side-solution",
+    "id": "fe540148-4f10-4507-b597-eb82a1cb4664",
+    "version": "1.0.0.0"
+  },
+  "paths": {
+    "zippedPackage": "solution/wiki-search.sppkg"
+  }
+}
