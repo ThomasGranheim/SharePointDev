@@ -13,15 +13,16 @@ import { IWikiSearchProps } from './components/IWikiSearchProps';
 
 export interface IWikiSearchWebPartProps {
   searchLabel: string;
+  list: string;
 }
 
 export default class WikiSearchWebPart extends BaseClientSideWebPart<IWikiSearchWebPartProps> {
-
   public render(): void {
     const element: React.ReactElement<IWikiSearchProps> = React.createElement(
       WikiSearch,
       {
-        searchLabel: this.properties.searchLabel
+        searchLabel: this.properties.searchLabel,
+        list: this.properties.list
       }
     );
 

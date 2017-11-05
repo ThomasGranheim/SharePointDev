@@ -4,6 +4,7 @@ import { IWikiSearchProps } from './IWikiSearchProps';
 import { IWikiSearchState } from './IWikiSearchState';
 import { escape } from '@microsoft/sp-lodash-subset';
 import { SearchBox } from 'office-ui-fabric-react/lib/SearchBox';
+import { ActionButton, IButtonProps } from 'office-ui-fabric-react/lib/Button';
 import { IWiki } from '../IWiki';
 import { IGroup } from '../IGroup';
 import MockHttpClient from '../MockHttpClient';
@@ -18,12 +19,10 @@ export default class WikiSearch extends React.Component<IWikiSearchProps, IWikiS
     };
   }
   public render(): React.ReactElement<IWikiSearchProps> {
-    let { searchLabel } = this.props;
     let { pages } = this.state;
-
     let groupObj = pages.reduce((prev, current) => {
       prev[current.Topic] = prev[current.Topic] || new Array();
-      prev[current.Topic].push(current)
+      prev[current.Topic].push(current);
       return prev;
     }, {});
 
@@ -33,30 +32,32 @@ export default class WikiSearch extends React.Component<IWikiSearchProps, IWikiS
 
     let pagesElement = groups.map((group: IGroup, index) => {
       let pages = group.Pages.map((page: IWiki) => {
-        return <div>{page.Title}</div>
+        return <ActionButton
+          data-automation-id='test'
+          iconProps={{ iconName: 'News' }}>
+          {page.Title}
+        </ActionButton>;
       });
       return (<div>
-        <h1 key={index}>{group.Title}</h1>
+        <h2 key={index}>{group.Title}</h2>
         {pages}
-      </div>)
+      </div>);
     });
     return (
       <div className={styles.wikiSearch}>
         <div className={styles.container}>
-          <div className={styles.row}>
-            <SearchBox
-              labelText={searchLabel}
-              onChange={(value: string) => this.onSearch(value)}
-            />
-            {pagesElement}
-          </div>
+          <SearchBox
+            labelText={this.props.searchLabel}
+            onChange={(value: string) => this.onSearch(value)}
+          />
+          {pagesElement}
         </div>
       </div>
     );
   }
 
   private onSearch(value: string): void {
-    this._getMockListData().then((pages: IWiki[]) => {
+    this._getMockListData(this.props.list).then((pages: IWiki[]) => {
       let filteredPages = pages.filter(_ => _.Title.toLowerCase().indexOf(value.toLowerCase()) >= 0 || _.Topic.toLowerCase().indexOf(value.toLowerCase()) >= 0);
       this.setState({
         pages: filteredPages,
@@ -64,7 +65,8 @@ export default class WikiSearch extends React.Component<IWikiSearchProps, IWikiS
     });
   }
 
-  private _getMockListData(): Promise<IWiki[]> {
+  private _getMockListData(list: string): Promise<IWiki[]> {
+    console.log(list);
     return MockHttpClient.get()
       .then((data: IWiki[]) => {
         return data;
